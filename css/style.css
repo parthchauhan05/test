@@ -1,0 +1,81 @@
+body{
+    box-sizing: border-box;
+    background-color: #aaa;
+}
+ .game-card {
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    width: 10rem;
+    height: 15rem;
+    perspective: 1000px; 
+}
+
+  .game-card.isFlipped {
+    transform: rotateY(-180deg);
+  }
+
+  .cardFace {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 5rem;
+    border-radius: 3%;
+  }
+
+  .front {
+    background-image: url("../img/card.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .back {
+    background-color: #212121;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#DBA25E;
+  }
+
+  .btn{
+      border-radius: 10rem;
+  }
+
+  .container-fluid{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+
+  .hidden{
+      display: none;
+  }
+
+  .faded {
+    opacity: 0.5;
+  }
+
+@media screen and (max-width: 767px){
+  .game-card{
+    width: 6rem;
+    height: 9rem;
+  }
+
+  .cardFace{
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 426px){
+  .game-card{
+    width: 4rem;
+    height: 6rem;
+  }
+
+  .cardFace{
+    font-size: 2rem;
+  }
+}
